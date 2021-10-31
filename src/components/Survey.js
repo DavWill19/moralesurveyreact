@@ -11,7 +11,6 @@ import config from '../config'
 
 
 const api_key = config.API_KEY;
-console.log(api_key)
 const questions = QUESTIONS;
 
 class Survey extends React.Component {
@@ -116,18 +115,19 @@ class Survey extends React.Component {
           console.log('FAILED...', error);
         });
 
-      fetch('https://localhost:3000/feedback', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            mode: 'cors'
-          },
-          body: JSON.stringify(
-            templateParams
-          ),
-        })
+      fetch('http://localhost:3000/feedback', {
+        method: 'POST',
+        headers: {
+          credentials: 'same-origin',
+          Accept: "application/json, text/plain, */*",
+          'Content-Type': 'application/json',
+          mode: 'no-cors',
+
+        },
+        body: JSON.stringify(
+          templateParams
+        ),
+      })
         .then((result) => {
           return result.json();
         })
