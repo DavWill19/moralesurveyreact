@@ -8,27 +8,11 @@ import {
 import Survey from './Survey';
 import Location from './Location'
 import Finish from './Finish'
-//import { connect } from 'react-redux';
+import Dashboard from './Dashboard'
 
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            restaurant: "Wendy's",
-            name: "",
-            answer1: "",
-            answer2: "",
-            answer3: "",
-            answer4: "",
-            answer5: "",
-            answer6: "",
-            answer7: "",
-            answer8: "",
-            contact: false,
-            message: ""
-        };
-    }
+
     render() {
 
         return (
@@ -37,6 +21,9 @@ class Main extends Component {
                     <Switch>
                         <Route exact path="/">
                             <Location />
+                        </Route>
+                        <Route exact path="/dashboard">
+                            <Dashboard />
                         </Route>
                         <Route exact path="/survey">
                             <Survey />
@@ -47,8 +34,8 @@ class Main extends Component {
                     </Switch>
                 </Router>
             </div>
-                );
+        );
     }
 }
 
-                export default Main;
+export default Main;

@@ -21,6 +21,26 @@ select{
 }
 
 .question {
-  font-size: 30px;
+  font-size: 25px;
   font-weight:500;
+}
+
+.leadership {
+  font-size: 20px;
+  font-weight:500;
+  color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.contact {
+  width: 200px;
+  margin: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: gray;
 }
